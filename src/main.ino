@@ -287,7 +287,7 @@ void updatePm() {
       pm01 = data1.PM_AE_UG_1_0;
       pm25 = data1.PM_AE_UG_2_5;
       pm10 = data1.PM_AE_UG_10_0;
-//      pm03PCount = data1.PM_RAW_0_3;
+      pm03PCount = data1.PM_RAW_0_3;
     } else {
       pm01 = -1;
       pm25 = -1;
