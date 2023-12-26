@@ -4,13 +4,14 @@ based on https://github.com/airgradienthq/arduino
 
 ## Changes
 - APIROOT URL set to airgradient.internal
+- RGB strip shows gradual changes in CO2 value by calculating hue dynamically
 - included patched PMS Library version from Airgradient website
 - added PlatformIO configuration
 
 ## Updating
 Use the `update.sh` script which downloads the newest version from
-the Airgradient GitHub repo and automatically replaces the APIROOT
-with airgradient.internal
+the Airgradient GitHub repo and automatically pastes the aforementioned changes
+into the file
 
 ## References
 - Build instructions: https://www.airgradient.com/open-airgradient/instructions/pro-v9/

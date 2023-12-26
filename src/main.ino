@@ -622,13 +622,12 @@ String getNormalizedMac() {
   return mac;
 }
 
-void setRGBledCO2color(int co2Value) {
-  if (co2Value >= 300 && co2Value < 800) setRGBledColor('g');
-  if (co2Value >= 800 && co2Value < 1000) setRGBledColor('y');
-  if (co2Value >= 1000 && co2Value < 1500) setRGBledColor('o');
-  if (co2Value >= 1500 && co2Value < 2000) setRGBledColor('r');
-  if (co2Value >= 2000 && co2Value < 3000) setRGBledColor('p');
-  if (co2Value >= 3000 && co2Value < 10000) setRGBledColor('z');
+void setRGBledCO2color(int co2Value) { 
+  if (co2Value < 300) return; 
+  uint16_t hue = map(co2Value, 800, 2000, 65535/3, 0); 
+  uint32_t rgbcolor = pixels.ColorHSV(hue); 
+  pixels.fill(rgbcolor); 
+  pixels.show(); 
 }
 
 void setRGBledColor(char color) {
