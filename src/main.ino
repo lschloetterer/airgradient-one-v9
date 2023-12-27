@@ -623,8 +623,9 @@ String getNormalizedMac() {
 }
 
 void setRGBledCO2color(int co2Value) { 
-  if (co2Value < 300) return; 
-  uint16_t hue = map(co2Value, 800, 2000, 65535/3, 0); 
+  if (co2Value <= 0) return; 
+  co2Value = min(co2Value, 3000); // don't calculate hue beyond 3000 to not return green again 
+  uint16_t hue = map(co2Value, 500, 1800, UINT16_MAX/3 /*green*/, 0 /*red*/); 
   uint32_t rgbcolor = pixels.ColorHSV(hue); 
   pixels.fill(rgbcolor); 
   pixels.show(); 
