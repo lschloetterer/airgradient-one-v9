@@ -12,6 +12,8 @@ The codes needs the following libraries installed:
 “U8g2” by oliver tested with version 2.32.15
 "Sensirion I2C SGP41" by Sensation Version 0.1.0
 "Sensirion Gas Index Algorithm" by Sensation Version 3.2.1
+“pms” by Markusz Kakl version 1.1.0
+"S8_UART" by Josep Comas Version 1.0.1
 "Arduino-SHT" by Johannes Winkelmann Version 1.2.2
 "Adafruit NeoPixel" by Adafruit Version 1.11.0
 
@@ -124,7 +126,7 @@ unsigned long previousPm = 0;
 int pm25 = -1;
 int pm01 = -1;
 int pm10 = -1;
-int pm03PCount = -1;
+//int pm03PCount = -1;
 
 const int tempHumInterval = 5000;
 unsigned long previousTempHum = 0;
@@ -272,12 +274,12 @@ void updatePm() {
       pm01 = data1.PM_AE_UG_1_0;
       pm25 = data1.PM_AE_UG_2_5;
       pm10 = data1.PM_AE_UG_10_0;
-      pm03PCount = data1.PM_RAW_0_3;
+//      pm03PCount = data1.PM_RAW_0_3;
     } else {
       pm01 = -1;
       pm25 = -1;
       pm10 = -1;
-      pm03PCount = -1;
+//      pm03PCount = -1;
     }
   }
 }
@@ -535,7 +537,7 @@ void sendToServer() {
       (pm01 < 0 ? "" : ", \"pm01\":" + String(pm01)) +
       (pm25 < 0 ? "" : ", \"pm02\":" + String(pm25)) +
       (pm10 < 0 ? "" : ", \"pm10\":" + String(pm10)) +
-      (pm03PCount < 0 ? "" : ", \"pm003_count\":" + String(pm03PCount)) +
+//      (pm03PCount < 0 ? "" : ", \"pm003_count\":" + String(pm03PCount)) +
       (TVOC < 0 ? "" : ", \"tvoc_index\":" + String(TVOC)) +
       (NOX < 0 ? "" : ", \"nox_index\":" + String(NOX)) +
       ", \"atmp\":" + String(temp) +
