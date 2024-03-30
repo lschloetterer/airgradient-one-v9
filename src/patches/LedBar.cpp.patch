@@ -1,0 +1,7 @@
+112a113,118
+> void LedBar::setHue(uint16_t hue) {
+>   uint32_t rgbcolor = pixel()->ColorHSV(hue);
+>   pixel()->fill(rgbcolor);
+>   pixel()->show();
+> }
+> 
