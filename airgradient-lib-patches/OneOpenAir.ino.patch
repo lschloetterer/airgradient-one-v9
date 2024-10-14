@@ -1,0 +1,12 @@
+500,510d499
+<   Serial.println();
+<   Serial.println("firmwareCheckForUpdate:");
+< 
+<   if (wifiConnector.isConnected()) {
+<     Serial.println("firmwareCheckForUpdate: Perform");
+<     otaHandler.setHandlerCallback(otaHandlerCallback);
+<     otaHandler.updateFirmwareIfOutdated(ag->deviceId());
+<   } else {
+<     Serial.println("firmwareCheckForUpdate: Ignored");
+<   }
+<   Serial.println();

@@ -5,3 +5,5 @@ patch .pio/libdeps/lolin_c3_mini/"AirGradient Air Quality Sensor"/src/Main/LedBa
 patch .pio/libdeps/lolin_c3_mini/"AirGradient Air Quality Sensor"/src/Main/LedBar.cpp airgradient-lib-patches/LedBar.cpp.patch
 # replaces default CO2 RGB handler
 patch .pio/libdeps/lolin_c3_mini/"AirGradient Air Quality Sensor"/src/AgStateMachine.cpp airgradient-lib-patches/AgStateMachine.cpp.patch
+# disable automatic firmware update check
+patch .pio/libdeps/lolin_c3_mini/"AirGradient Air Quality Sensor"/examples/OneOpenAir/OneOpenAir.ino airgradient-lib-patches/OneOpenAir.ino.patch
